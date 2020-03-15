@@ -1,0 +1,65 @@
+<section id="home">
+  <!-- Header -->
+  <div
+    data-poster-url="/videos/AdobeStock_159597945-poster-00001.jpg"
+    data-video-urls="/videos/AdobeStock_159597945-transcode.mp4,/videos/AdobeStock_159597945-transcode.webm"
+    data-autoplay="true"
+    data-loop="true"
+    data-wf-ignore="true"
+    class="background-video w-background-video w-background-video-atom embed-responsive"
+  >
+    <video
+      autoplay=""
+      loop=""
+      muted=""
+      playsinline=""
+      data-wf-ignore="true"
+      data-object-fit="cover"
+    >
+      <source
+        src="/videos/AdobeStock_159597945-transcode.mp4"
+        data-wf-ignore="true"
+        class="embed-responsive-item"
+      />
+      <source
+        src="/videos/AdobeStock_159597945-transcode.webm"
+        data-wf-ignore="true"
+        class="embed-responsive-item"
+      />
+    </video>
+  </div>
+  <div class="intro-message"></div>
+</section>
+
+<div class="container">
+  <div class="row">
+    <div class="col-auto ml-auto">
+      <a href="/en/" class="w-inline-block"
+        ><img
+          src="/img/Flag_of_the_United_Kingdom.svg"
+          alt=""
+          class="image-flag"
+      /></a>
+    </div>
+    <div class="col-auto mr-auto">
+      <a href="/de/" class="w-inline-block w--current"
+        ><img
+          src="/img/2000px-Flag_of_Germany.svg.png"
+          srcset="
+            /img/2000px-Flag_of_Germany.svg-p-500.png  500w,
+            /img/2000px-Flag_of_Germany.svg-p-800.png  800w,
+            /img/2000px-Flag_of_Germany.svg.png       2000w
+          "
+          sizes="100px"
+          alt=""
+          class="image-flag"
+      /></a>
+    </div>
+  </div>
+</div>
+<% page.posts.data.sort((a, b) => (a.order>b.order) ? 1: -1).forEach((post) => {
+%> lang:<%= post.lang %><br />
+order: <%= post.order %><br />
+title: <%= post.title %><br />
+<br />
+<% }) %>

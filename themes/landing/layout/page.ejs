@@ -1,0 +1,47 @@
+<!-- Header -->
+<% if (page.img) { %>
+<style type="text/css">
+  .intro-header {
+    background-image: url('<%-url_for(page.img)%>');
+  }
+</style>
+<% } %>
+<div class="intro-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="post-header">
+          <h1><%= page.title || config.title %></h1>
+          <% if (page.subtitle) { %>
+          <h3><%= page.subtitle %></h3>
+          <% } %>
+          <hr class="intro-divider" />
+          <ul class="list-inline tags">
+            <%- partial('_partial/post/tag') %> <% for(var i in page.tags) { %>
+            <li>
+              <a href="<%- url_for(page.tags[i]) %>" rel="tag"><%= i %></a>
+            </li>
+            <% } %>
+          </ul>
+          <p class="post-meta">
+            Posted by <%= page.author || config.author %> on <%=
+            page.date.format(config.date_format) %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="content-section-a">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-1">
+        <div class="post-container">
+          <%= page.content %>
+        </div>
+        {% include '_partials/sharing.swig' %} {% include
+        '_partials/comments.swig' %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <%- partial('_partial/head') %>
+  <body>
+    <%- partial('_partial/header', null, {cache: !config.relative_link}) %>
+    <section id="main"><%- body %></section>
+    <%- partial('_partial/contact') %> <%- partial('_partial/footer', null,
+    {cache: !config.relative_link}) %> <%- partial('scripts/js') %> <%-
+    partial('scripts/comments') %>
+  </body>
+</html>
